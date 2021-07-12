@@ -1,0 +1,14 @@
+set interfaces ae9 unit {{unit}} description "{{description}}"
+set interfaces ae9 unit {{unit}} encapsulation vlan-bridge
+set interfaces ae9 unit {{unit}} vlan-tags outer {{vlan_outer}}
+set interfaces ae9 unit {{unit}} vlan-tags inner {{vlan_inner}}
+set interfaces ae9 unit {{unit}} family bridge policer input {{policer_input}}
+set interfaces ae9 unit {{unit}} family bridge policer output {{policer_output}}
+
+{% if mtu %}
+set interfaces irb unit {{unit}} family inet mtu {mtu}
+{% endif %}
+set interfaces irb unit {{unit}} description "{{description}}"
+set interfaces irb unit {{unit}} family inet address {{address}}
+set interfaces irb unit {{unit}} mac {{hex_address}}
+

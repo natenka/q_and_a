@@ -1,0 +1,28 @@
+set interfaces ae0 unit 1051 description "INET_EXAMPLE_30.03.2021"
+set interfaces ae0 unit 1051 vlan-tags outer 2318
+set interfaces ae0 unit 1051 vlan-tags inner 1000
+set interfaces ae0 unit 1051 accounting-profile 62.183.0.222
+set interfaces ae0 unit 1051 family inet policer input L2-100M
+set interfaces ae0 unit 1051 family inet policer output L2-100M
+set interfaces ae0 unit 1051 family inet address 85.172.17.157/30
+
+
+set interfaces ae0 unit 1052 description "INET_EXAMPLE_30.04.2021"
+set interfaces ae0 unit 1052 vlan-tags outer 18
+set interfaces ae0 unit 1052 vlan-tags inner 10
+set interfaces ae0 unit 1052 accounting-profile 62.183.0.111
+set interfaces ae0 unit 1052 family inet mtu 1500
+set interfaces ae0 unit 1052 family inet policer input L2-10M
+set interfaces ae0 unit 1052 family inet policer output L2-10M
+set interfaces ae0 unit 1052 family inet address 85.172.55.157/30
+
+set interfaces ae0 unit 1098 description "L3VPN_EXAMLE_19.05.2021"
+set interfaces ae0 unit 1098 vlan-tags outer 1308
+set interfaces ae0 unit 1098 vlan-tags inner 1199
+set interfaces ae0 unit 1098 accounting-profile 62.183.0.222
+set interfaces ae0 unit 1098 family inet mtu 1500
+set interfaces ae0 unit 1098 family inet policer input L2-30M
+set interfaces ae0 unit 1098 family inet policer output L2-30M
+set interfaces ae0 unit 1098 family inet address 10.160.224.241/30
+
+

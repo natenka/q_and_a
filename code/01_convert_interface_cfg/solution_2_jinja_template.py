@@ -41,4 +41,4 @@ def convert_intf_cfg(source_cfg, dest_cfg):
 
 
 if __name__ == "__main__":
-    convert_intf_cfg("cfg_data.txt", "results.txt")
+    convert_intf_cfg("input_cfg_data.txt", "output_cfg_results.txt")

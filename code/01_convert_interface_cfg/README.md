@@ -35,4 +35,4 @@ set interfaces irb unit 1001 mac 00:ff:3c:01:01:01
 
 Картинка с обозначением цветом какая часть куда переходит:
 
-![qa01]()
+![qa01](https://github.com/natenka/q_and_a/blob/main/code/01_convert_interface_cfg/qa_01.png?raw=true)

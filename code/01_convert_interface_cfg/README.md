@@ -72,6 +72,7 @@ set interfaces irb unit 1001 mac 00:ff:3c:01:01:01
 ## Решение
 
 В варианте решения задачи показан код, который обрабатывает несколько интерфейсов из файла и с учетом строки mtu.
+Используются [регулярные выражения](https://pyneng.readthedocs.io/ru/latest/book/Part_III.html), форматирование строк, [Jinja2](https://pyneng.readthedocs.io/ru/latest/book/20_jinja2/index.html).
 
 Файлы:
 

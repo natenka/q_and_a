@@ -70,8 +70,11 @@ set interfaces irb unit 1001 mac 00:ff:3c:01:01:01
 
 ## Solution
 
+[Regular expressions](https://pyneng.readthedocs.io/en/latest/book/Part_III.html), string formatting, [Jinja2](https://pyneng.readthedocs.io/en/latest/book/20_jinja2/index.html) are used.
+
+
 * input_cfg_data.txt - is the initial configuration of the interfaces to be converted
 * output_cfg_results.txt - what you need to get in the end
 * solution_1.py - a version of the solution with the compilation of the final template using string formatting
-* solution_2_jinja_template.py - solution with Jinja2 template
+* solution_2_jinja_template.py - solution with [Jinja2](https://pyneng.readthedocs.io/en/latest/book/20_jinja2/index.html) template
 * interface_template.j2 - Jinja2 template for the second solution

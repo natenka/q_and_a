@@ -1,4 +1,4 @@
-## [English translation]()
+## [English translation](https://github.com/natenka/q_and_a/blob/main/code/01_convert_interface_cfg/README_ENG.md)
 
 ## Надо разбить настройку интерфейса на две части
 

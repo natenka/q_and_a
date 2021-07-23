@@ -9,7 +9,9 @@
 Варианты решения не являются каким-то идеальным варинтом, это просто тот вариант решения,
 который написала я.
 
-## Задача 1
+## [Задача 1](https://github.com/natenka/q_and_a/tree/main/code/01_convert_interface_cfg)
+
+> [English translation](https://github.com/natenka/q_and_a/blob/main/code/01_convert_interface_cfg/README_ENG.md)
 
 Надо разбить настройку интерфейса на две части.
 Есть конфигурация интерфейса такого вида:
@@ -43,3 +45,18 @@ set interfaces irb unit 1001 mac 00:ff:3c:01:01:01
 
 [Подробнее](https://github.com/natenka/q_and_a/tree/main/code/01_convert_interface_cfg)
 
+## [Задача 2](https://github.com/natenka/q_and_a/tree/main/code/02_explore_network_map)
+
+> [English translation](https://github.com/natenka/q_and_a/blob/main/code/02_explore_network_map/README_ENG.md)
+
+Надо обнаружить топологию сети через вывод CDP (считаем что CDP есть на всех устройствах).
+Для старта должен быть известен один IP-адрес устройства и параметры подключения
+по SSH ко всем устройствам в сети.
+
+Надо подключиться к первому устройству, дать команду ``sh cdp neighbors detail``, получить
+всех соседей и их IP-адреса и подключаться к каждому соседу.
+На каждом соседе опять дать команду ``sh cdp neighbors detail`` и получить соседей этого устройства.
+Так надо пройтись по всей сети и собрать информацию об устройствах и топологии.
+
+
+[Подробнее](https://github.com/natenka/q_and_a/tree/main/code/02_explore_network_map)

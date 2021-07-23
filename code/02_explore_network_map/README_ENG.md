@@ -4,16 +4,17 @@ We need to discover the network topology through the CDP output (we assume that
 all devices have CDP).
 The IP address of the starting device and the parameters for connecting via SSH to all devices on the network are known.
 
-
-> Можно использовать CDP или LLDP.
-
-Надо подключиться к первому устройству, дать команду ``sh cdp neighbors detail``, получить
-всех соседей и их IP-адреса и подключаться к каждому соседу.
-На каждом соседе опять дать команду ``sh cdp neighbors detail`` и получить соседей этого устройства.
-Так надо пройтись по всей сети и собрать информацию об устройствах и топологии.
+> CDP or LLDP can be used.
 
 
-Например, если топология такая:
+You need to connect to the first device, run ``sh cdp neighbors detail`` command,
+get all neighbors and their IP addresses, and connect to each neighbor.
+For each neighbor, run the ``sh cdp neighbors detail`` command again to get
+the neighbors information for that device. Thus, you need to traverse
+the entire network and collect information about devices and topology.
+
+
+For example, if the topology looks like this:
 
 ```
 .====.    .=====.    .====.
@@ -26,15 +27,15 @@ The IP address of the starting device and the parameters for connecting via SSH 
           '===='
 ```
 
-Сначала подключаемся к R1, потом к SW1 и к R2, R3.
-IP-адреса устройств для словаря ниже:
+First we connect to R1, then to SW1 and to R2, R3.
+Device IP addresses in the dictionary below:
 
 * R1 192.168.100.1
 * R2 192.168.100.2
 * R3 192.168.100.3
 * SW1 192.168.100.100
 
-Итоговая топология может выглядеть как угодно, как вариант это может быть такой словарь:
+The final topology can look anything you like, for example, it can be a dictionary like this:
 
 ```python
 {'192.168.100.1': {'192.168.100.100': {'local_port': 'Ethernet0/0',
@@ -51,13 +52,13 @@ IP-адреса устройств для словаря ниже:
                                        'remote_port': 'Ethernet0/3'}}}
 ```
 
-Я выбрала именно такой формат потому что мне было удобно с ним работать,
-но сам итоговый формат описания топологии не принципиален, главное как-то
-отмечать как оборудование связано между собой.
+I chose this format because it was convenient for me to work with it,
+but the final format for describing the topology itself is not important,
+the main thing is to somehow describe how the equipment is interconnected.
 
-## Петли в топологии
+## Topology loops
 
-Следующий шаг сделать так, чтобы код работал и для топологии в которой есть петли.
+The next step is to make the code work for a topology that has loops.
 
 ```
 .====.    .=====.    .====.
@@ -70,17 +71,16 @@ IP-адреса устройств для словаря ниже:
           '===='
 ```
 
-В этом случае проблема в том, что код может зациклится между SW1, R2 и R3.
-И надо каким-то образом отмечать какие устройства уже посещались.
+In this case, the problem is that the code can loop between SW1, R2 and R3.
+And it is necessary to somehow mark which devices have already been visited.
 
-## Hostname вместо IP-адреса
+## Hostname
 
-Если в предыдущих вариантах посещенный сосед отмечался по IP-адресу, надо
-сделать так чтобы он отмечался и по hostname тоже, так как, например, SW1 и R2 будут
-видеть R3 через разные IP-адреса и R3 будет считаться непосещенным соседом.
+If in the previous versions the visited neighbor was marked by the IP address,
+you need to make sure that it is marked by the hostname too, since, for example,
+SW1 and R2 will see R3 through different IP addresses and R3 will be considered an unvisited neighbor.
 
-
-Пример итоговых данных с hostname:
+An example of the final topology with hostname:
 
 ```python
 {'R1': {'SW1': {'ip': '192.168.100.100',
@@ -109,9 +109,8 @@ IP-адреса устройств для словаря ниже:
                 'remote_port': 'Ethernet0/0'}}}
 ```
 
-## Решение
+## Solution
 
-* solution_1_ip_only.py - вариант решения с учетом только IP-адресов при определении было ли устройство посещено
-* solution_2_ip_and_hostname.py - вариант решения с учетом IP-адресов и hostname при определении было ли устройство посещено
-* solution_3_ip_and_hostname_rich_live.py - второй вариант, но с выводом топологии с помощью Rich
-
+* solution_1_ip_only.py - a version of the solution taking into account only IP addresses when determining whether a device has been visited
+* solution_2_ip_and_hostname.py - a version of the solution taking into account IP addresses and hostname when determining whether the device was visited
+* solution_3_ip_and_hostname_rich_live.py - second option, but with topology output using Rich

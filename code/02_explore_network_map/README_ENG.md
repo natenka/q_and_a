@@ -1,10 +1,9 @@
-## [English translation]()
+## Network Topology Discovery Using CDP/LLDP
 
-## Обнаружение топологии сети по CDP/LLDP
+We need to discover the network topology through the CDP output (we assume that
+all devices have CDP).
+The IP address of the starting device and the parameters for connecting via SSH to all devices on the network are known.
 
-Надо обнаружить топологию сети через вывод CDP (считаем что CDP есть на всех устройствах).
-Для старта должен быть известен один IP-адрес устройства и параметры подключения
-по SSH ко всем устройствам в сети.
 
 > Можно использовать CDP или LLDP.
 

@@ -1,7 +1,6 @@
 import re
 from pprint import pprint
 
-import yaml
 from scrapli import Scrapli
 from scrapli.exceptions import ScrapliException
 
@@ -64,11 +63,7 @@ def explore_topology(start_device_ip, params):
 
         for neighbor, n_data in neighbors.items():
             neighbor_ip = n_data["ip"]
-            if (
-                neighbor not in visited_hostnames
-                and neighbor_ip not in visited_ipadresses
-                and neighbor_ip not in todo
-            ):
+            if neighbor not in visited_hostnames | visited_ipadresses | set(todo):
                 todo.append(neighbor_ip)
     return topology
 

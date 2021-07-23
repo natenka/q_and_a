@@ -26,7 +26,6 @@ def parse_cdp(output):
         r"Interface: (?P<local_port>\S+), +"
         r"Port ID \(outgoing port\): (?P<remote_port>\S+)"
     )
-
     result = {}
 
     match_iter = re.finditer(regex, output, re.DOTALL)
@@ -41,11 +40,11 @@ def parse_cdp(output):
 def explore_topology(start_device, params):
     visited_hosts = set()
     topology = {}
-    q = Queue()
-    q.put(start_device)
+    todo = Queue()
+    todo.put(start_device)
 
-    while q.qsize() > 0:
-        current = q.get()
+    while todo.qsize() > 0:
+        current = todo.get()
         params["host"] = current
         if current in visited_hosts:
             continue
@@ -56,7 +55,7 @@ def explore_topology(start_device, params):
         topology[current] = connections
         for neighbor, n_data in connections.items():
             if neighbor not in visited_hosts:
-                q.put(neighbor)
+                todo.put(neighbor)
         visited_hosts.add(current)
     return topology
 

@@ -9,6 +9,10 @@ from solution_2_ip_and_hostname import parse_cdp, connect_ssh
 
 
 def generate_tree_from_schema(schema):
+    """
+    Функция рисует дерево топологии на основе словаря schema.
+    В дереве показаны только имена устройств
+    """
     tree = Tree("Topology")
     for s_dev, d_dev_params in schema.items():
         s_dev_tree = tree.add(s_dev)
@@ -18,13 +22,17 @@ def generate_tree_from_schema(schema):
 
 
 def generate_tree_from_schema_ports(schema):
+    """
+    Функция рисует дерево топологии на основе словаря schema.
+    В дереве показаны имена устройств и порты
+    """
     tree = Tree("Topology")
     for s_dev, d_dev_params in schema.items():
         s_dev_tree = tree.add(s_dev)
         for d_dev, params in d_dev_params.items():
             l_port = params["local_port"]
             r_port = params["remote_port"]
-            s_dev_tree.add(l_port).add(r_port).add(d_dev)
+            s_dev_tree.add(f"{l_port} ── {r_port} ── {d_dev}")
     return Padding(tree, 4)
 
 

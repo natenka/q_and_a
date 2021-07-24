@@ -33,9 +33,8 @@ def parse_cdp(output):
 
     match_iter = re.finditer(regex, output, re.DOTALL)
     for match in match_iter:
-        hostname = match.group("host")
         groupdict = match.groupdict()
-        del groupdict["host"]
+        hostname = groupdict.pop("host")
         neighbors[hostname] = groupdict
     return neighbors
 

@@ -30,9 +30,8 @@ def parse_cdp(output):
 
     match_iter = re.finditer(regex, output, re.DOTALL)
     for match in match_iter:
-        ip = match.group("ip")
         groupdict = match.groupdict()
-        del groupdict["ip"]
+        ip = groupdict.pop("ip")
         result[ip] = groupdict
     return result
 

@@ -14,7 +14,7 @@ the neighbors information for that device. Thus, you need to traverse
 the entire network and collect information about devices and topology.
 
 
-For example, if the topology looks like this:
+For example, if the topology looks like this and the IP address of R1 is known:
 
 ```
 .====.    .=====.    .====.
@@ -27,7 +27,11 @@ For example, if the topology looks like this:
           '===='
 ```
 
-First we connect to R1, then to SW1 and to R2, R3.
+The order of work can be something like this:
+
+1. Connect to R1 and get CDP neighbors - only SW1
+2. We connect to SW1 and get three neighbors R1, R2, R3 - we connect only to R2 and R3, since we have already connected to R1
+
 Device IP addresses in the dictionary below:
 
 * R1 192.168.100.1
@@ -58,7 +62,7 @@ the main thing is to somehow describe how the equipment is interconnected.
 
 ## Topology loops
 
-The next step is to make the code work for a topology that has loops.
+The next step is to verify that the code works for the topology that has loops.
 
 ```
 .====.    .=====.    .====.
@@ -70,9 +74,6 @@ The next step is to make the code work for a topology that has loops.
           | R3 |-------|
           '===='
 ```
-
-In this case, the problem is that the code can loop between SW1, R2 and R3.
-And it is necessary to somehow mark which devices have already been visited.
 
 ## Hostname
 

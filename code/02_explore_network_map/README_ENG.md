@@ -13,6 +13,7 @@ For each neighbor, run the ``sh cdp neighbors detail`` command again to get
 the neighbors information for that device. Thus, you need to traverse
 the entire network and collect information about devices and topology.
 
+> The command is written for Cisco IOS and CDP, but any vendor and appropriate command can be used to view CDP/LDP neighbor information.
 
 For example, if the topology looks like this and the IP address of R1 is known:
 

@@ -11,8 +11,8 @@
 
 | QA | Description                                       | Topics/modules used in solution |
 | ---|-------------------------------------------------- | ------------------------------- |
-| 1  | Split the interface configuration into two parts  | regex, format, Jinja2           |
-| 2  | Network Topology Discovery Using CDP/LLDP         | scrapli, regex, queue, Rich     |
+| 1  | [Split the interface configuration into two parts](https://github.com/natenka/q_and_a/tree/main/code/01_convert_interface_cfg) | regex, format, Jinja2           |
+| 2  | [Network Topology Discovery Using CDP/LLDP](https://github.com/natenka/q_and_a/tree/main/code/02_explore_network_map) | scrapli, regex, queue, Rich     |
 
 
 ## [Задача 1](https://github.com/natenka/q_and_a/tree/main/code/01_convert_interface_cfg)

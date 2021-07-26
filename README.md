@@ -9,6 +9,12 @@
 Варианты решения не являются каким-то идеальным варинтом, это просто тот вариант решения,
 который написала я.
 
+| QA | Description                                       | Topics/modules used in solution |
+| ---|-------------------------------------------------- | ------------------------------- |
+| 1  | Split the interface configuration into two parts  | regex, format, Jinja2           |
+| 2  | Network Topology Discovery Using CDP/LLDP         | scrapli, regex, queue, Rich     |
+
+
 ## [Задача 1](https://github.com/natenka/q_and_a/tree/main/code/01_convert_interface_cfg)
 
 > [English translation](https://github.com/natenka/q_and_a/blob/main/code/01_convert_interface_cfg/README_ENG.md)

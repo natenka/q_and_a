@@ -1,0 +1,30 @@
+{
+  "users": {
+    "natenka": {
+      "projects": {
+        "pyneng": {
+          "name": "Python для сетевых инженеров",
+          "url": "https://natenka.github.io/pyneng/"
+        },
+        "advpyneng": {
+          "name": "Advanced Python для сетевых инженеров",
+          "url": "https://advpyneng.readthedocs.io/ru/latest/"
+        }
+      },
+      "twitter": "https://twitter.com/natenka_says"
+    },
+    "pyneng": {
+      "projects": {
+        "pyneng.github.io": {
+          "name": "Сайт курса PyNEng Online",
+          "url": "https://pyneng.github.io/"
+        },
+        "advpyneng.github.io": {
+          "name": "Сайт курса Advanced PyNEng Online",
+          "url": "https://advpyneng.github.io/"
+        }
+      },
+      "twitter": null
+    }
+  }
+}

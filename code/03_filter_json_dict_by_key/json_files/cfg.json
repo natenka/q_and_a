@@ -48,16 +48,6 @@
       },
       "user": [
         {
-          "class": "read-only",
-          "name": "RO",
-          "uid": 2006
-        },
-        {
-          "class": "super-user",
-          "name": "SU",
-          "uid": 2007
-        },
-        {
           "authentication": {
             "encrypted-password": "password"
           },

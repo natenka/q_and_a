@@ -13,9 +13,10 @@
 | ---|-------------------------------------------------- | ------------------------------- |
 | 1  | [Split the interface configuration into two parts](https://github.com/natenka/q_and_a/tree/main/code/01_convert_interface_cfg) | regex, format, Jinja2           |
 | 2  | [Network Topology Discovery Using CDP/LLDP](https://github.com/natenka/q_and_a/tree/main/code/02_explore_network_map) | scrapli, regex, queue, Rich     |
+| 3  | [Filter JSON data by Key](https://github.com/natenka/q_and_a/tree/main/code/03_filter_json_dict_by_key) | recursion, generator, regex, click |
 
 
-## [Задача 1](https://github.com/natenka/q_and_a/tree/main/code/01_convert_interface_cfg)
+## [Q&A 1](https://github.com/natenka/q_and_a/tree/main/code/01_convert_interface_cfg)
 
 > [English translation](https://github.com/natenka/q_and_a/blob/main/code/01_convert_interface_cfg/README_ENG.md)
 
@@ -51,7 +52,7 @@ set interfaces irb unit 1001 mac 00:ff:3c:01:01:01
 
 [Подробнее](https://github.com/natenka/q_and_a/tree/main/code/01_convert_interface_cfg)
 
-## [Задача 2](https://github.com/natenka/q_and_a/tree/main/code/02_explore_network_map)
+## [Q&A 2](https://github.com/natenka/q_and_a/tree/main/code/02_explore_network_map)
 
 > [English translation](https://github.com/natenka/q_and_a/blob/main/code/02_explore_network_map/README_ENG.md)
 
@@ -66,3 +67,32 @@ set interfaces irb unit 1001 mac 00:ff:3c:01:01:01
 
 
 [Подробнее](https://github.com/natenka/q_and_a/tree/main/code/02_explore_network_map)
+
+
+## [Q&A 3](https://github.com/natenka/q_and_a/tree/main/code/03_filter_json_dict_by_key)
+
+> [English translation](https://github.com/natenka/q_and_a/blob/main/code/03_filter_json_dict_by_key/README_ENG.md)
+
+Задача отфильтровать данные из JSON файла по указанному ключу. Технически речь
+об отборе данных из словаря/списка, так как после чтения данных в Python это уже будет
+Python list/dict.
+JSON упоминается потому что именно в этом формате часто очень большая вложенность.
+
+```
+$ python solution_2a.py json_files/cfg.json name
+['ae1.185', 'v185', 'ae47.128', 'v128', 'ae1.139', 'v139', 'ae1.140', 'v140', 'User1', 'User2', 'User3', 'ge-0/0/0', '192.168.1.1/29', 11, '10.1.1.1/29', 'ge-0/0/1', '192.168.199.1/30']
+
+$ python solution_2a.py json_files/cfg.json user
+[
+    [
+        {'authentication': {'encrypted-password': 'password'}, 'class': 'super-user', 'name': 'User1', 'uid': 1000},
+        {'authentication': {'encrypted-password': 'password'}, 'class': 'super-user', 'name': 'User2', 'uid': 2001},
+        {'authentication': {'encrypted-password': 'password'}, 'class': 'super-user', 'name': 'User3', 'uid': 2002}
+    ]
+]
+
+$ python solution_2a.py json_files/cfg.json user name
+['User1', 'User2', 'User3']
+```
+
+

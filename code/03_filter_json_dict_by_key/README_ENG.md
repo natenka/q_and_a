@@ -1,17 +1,18 @@
-## Фильтрация JSON по ключу
+## Filter JSON by Key
 
-Задача отфильтровать данные из JSON файла по указанному ключу. Технически речь
-об отборе данных из словаря/списка, так как после чтения данных в Python это уже будет
-Python list/dict.
-JSON упоминается потому что именно в этом формате часто очень большая вложенность.
+The task is to filter data from a JSON file by the specified key. Technically,
+we are talking about selecting data from a dictionary/list, since after reading
+JSON data in Python, it will already be Python list/dict. JSON is mentioned
+because this format is often very nested.
 
-### Первый этап - отбор всех значений, которые соответствуют указанному ключу
+### The first step is to select all values that match the specified key
 
-Скрипт может работать как угодно в целом, главное отобрать нужные значения.
-У меня варианты решения сделаны так, что как первый аргумент передается имя файла в формате JSON,
-а вторым аргументом ключ по которому надо отфильтровать данные.
+The code can work as you like in general, the main thing is to select the necessary
+values. My solutions are made in such a way that the name of the file in JSON format
+is passed as the first argument, and the key by which the data must be filtered as the second argument.
 
-Например данных из файла json_files/basic.json (JSON файл считан в словарь):
+
+Sample data from json_files/basic.json file (JSON file read into dictionary):
 
 ```python
 {'users': {'natenka': {'projects': {'advpyneng': {'name': 'Advanced Python for network engineers',
@@ -26,39 +27,42 @@ JSON упоминается потому что именно в этом фор�
                       'twitter': None}}}
 ```
 
-Вызов скрипта может выглядеть так:
+The script call might look like this:
 
 ```
 $ python solution_1.py json_files/basic.json name
 ```
 
-Результат в этом случае должен быть таким:
+The result in this case should be like this:
+
 ```
 $ python solution_1.py json_files/basic.json name
 ['Python for network engineers', 'Advanced Python for network engineers', 'PyNEng Online Course Website', 'Advanced PyNEng Online Course Website']
 ```
 
-Отфильтрованные данные выводятся на stdout для удобства, но сам код должен не просто выводить данные,
-а собирать их, например, в список и возвращать.
+The filtered data is printed to stdout for convenience, but the code itself
+should not just print the data, but collect it, for example, into a list and return it.
 
-### Второй этап - добавить иерархию ключей
+### The second step is to add a hierarchy of keys
 
-Часто ключи будут повторятся в совершенно разных секциях, поэтому было бы неплохо иметь возможность
-указывать иерархию ключей. Например, такой вызов, с указанием только name, показывает все значения, которые соответствуют ключу name:
+Often, keys will be repeated in completely different sections,
+so it would be userful to be able to specify a key hierarchy. For example, such a call,
+specifying only name, shows all values that match the key name:
 
 ```
 $ python solution_2a.py json_files/basic.json name
 ['Python for network engineers', 'Advanced Python for network engineers', 'PyNEng Online Course Website', 'Advanced PyNEng Online Course Website']
 ```
 
-А вызов с аргументами ``natenka name`` значит, что надо показывать значение ключа name только
-если ключ name находится в значении ключа natenka (не важно в какой вложенности):
+A call with natenka name arguments means that you need to show the value
+of the name key only if the name key is in the value of the natenka key (no matter how nested it is):
+
 ```
 $ python solution_2a.py json_files/basic.json natenka name
 ['Python for network engineers', 'Advanced Python for network engineers']
 ```
 
-Пример вызова для другого файла:
+An example of a call for another file:
 
 ```
 $ python solution_2a.py json_files/cfg.json name
@@ -77,7 +81,7 @@ $ python solution_2a.py json_files/cfg.json user name
 ['User1', 'User2', 'User3']
 ```
 
-### Третий этап - указывать ключ как регулярное выражение
+### The third step is to specify the key as a regular expression
 
 ```
 $ python solution_3_regex_key.py json_files/cfg.json vlan.*
@@ -113,23 +117,19 @@ $ python solution_3_regex_key.py json_files/cfg.json inter.*
 
 ```
 
-## Решение
+## Solution
 
-Во всех вариантах решения используется рекурсия.
+All solutions use [recursion](https://runestone.academy/runestone/books/published/pythonds/Recursion/toctree.html).
 
-* solution_1.py - вариант решения только для первого этапа
-* solution_2a.py - вариант решения для 1 и 2 этапа
-* solution_2b_generators.py - вариант решения аналогичен solution_1.py, но с генераторами
-* solution_3_regex_key.py - вариант решения для 3го этапа: с указанием ключа в виде регулярного
-  выражения. Результат выводится вместе с ключом, так как не всегда понятно какой именно ключ совпал
-* json_files - каталог с примерами файлов в формате JSON
+* solution_1.py - solution only for the first step
+* solution_2a.py - solution for steps 1 and 2
+* solution_2b_generators.py - solution is similar to solution_2a.py, but with generators
+* solution_3_regex_key.py - solution for the 3rd step: specifying the key
+  in the form of a regular expression. The result is displayed along with the key,
+  since it is not always clear which key matched.
+* json_files - directory with sample JSON files
 
   * basic.json
   * cfg.json
   * cmd_output.json
   * repos.json
-
-Полезные ссылки:
-
-* [recursion](https://runestone.academy/runestone/books/published/pythonds/Recursion/toctree.html), [перевод](http://aliev.me/runestone/Recursion/Objectives.html)
-

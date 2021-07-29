@@ -117,7 +117,7 @@ $ python solution_3_regex_key.py json_files/cfg.json inter.*
 
 ## Решение
 
-Во всех вариантах решения используется рекурсия.
+Во всех вариантах решения используется [рекурсия](https://runestone.academy/runestone/books/published/pythonds/Recursion/toctree.html), [перевод](http://aliev.me/runestone/Recursion/Objectives.html).
 
 * solution_1.py - вариант решения только для первого этапа
 * solution_2a.py - вариант решения для 1 и 2 этапа
@@ -125,13 +125,4 @@ $ python solution_3_regex_key.py json_files/cfg.json inter.*
 * solution_3_regex_key.py - вариант решения для 3го этапа: с указанием ключа в виде регулярного
   выражения. Результат выводится вместе с ключом, так как не всегда понятно какой именно ключ совпал
 * json_files - каталог с примерами файлов в формате JSON
-
-  * basic.json
-  * cfg.json
-  * cmd_output.json
-  * repos.json
-
-Полезные ссылки:
-
-* [recursion](https://runestone.academy/runestone/books/published/pythonds/Recursion/toctree.html), [перевод](http://aliev.me/runestone/Recursion/Objectives.html)
 

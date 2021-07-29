@@ -3,11 +3,11 @@
     "natenka": {
       "projects": {
         "pyneng": {
-          "name": "Python для сетевых инженеров",
+          "name": "Python for network engineers",
           "url": "https://natenka.github.io/pyneng/"
         },
         "advpyneng": {
-          "name": "Advanced Python для сетевых инженеров",
+          "name": "Advanced Python for network engineers",
           "url": "https://advpyneng.readthedocs.io/ru/latest/"
         }
       },
@@ -16,11 +16,11 @@
     "pyneng": {
       "projects": {
         "pyneng.github.io": {
-          "name": "Сайт курса PyNEng Online",
+          "name": "PyNEng Online Course Website",
           "url": "https://pyneng.github.io/"
         },
         "advpyneng.github.io": {
-          "name": "Сайт курса Advanced PyNEng Online",
+          "name": "Advanced PyNEng Online Course Website",
           "url": "https://advpyneng.github.io/"
         }
       },

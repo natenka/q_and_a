@@ -1,4 +1,4 @@
-## [English translation]()
+## [English translation](https://github.com/natenka/q_and_a/blob/main/code/03_filter_json_dict_by_key/README_ENG.md)
 
 ## Фильтрация JSON по ключу
 
@@ -16,14 +16,14 @@ JSON упоминается потому что именно в этом фор�
 Например данных из файла json_files/basic.json (JSON файл считан в словарь):
 
 ```python
-{'users': {'natenka': {'projects': {'advpyneng': {'name': 'Advanced Python для сетевых инженеров',
+{'users': {'natenka': {'projects': {'advpyneng': {'name': 'Advanced Python for network engineers',
                                                   'url': 'https://advpyneng.readthedocs.io/ru/latest/'},
-                                    'pyneng': {'name': 'Python для сетевых инженеров',
+                                    'pyneng': {'name': 'Python for network engineers',
                                                'url': 'https://natenka.github.io/pyneng/'}},
                        'twitter': 'https://twitter.com/natenka_says'},
-           'pyneng': {'projects': {'advpyneng.github.io': {'name': 'Сайт курса Advanced PyNEng Online',
+           'pyneng': {'projects': {'advpyneng.github.io': {'name': 'Advanced PyNEng Online Course Website',
                                                            'url': 'https://advpyneng.github.io/'},
-                                   'pyneng.github.io': {'name': 'Сайт курса PyNEng Online',
+                                   'pyneng.github.io': {'name': 'PyNEng Online Course Website',
                                                         'url': 'https://pyneng.github.io/'}},
                       'twitter': None}}}
 ```
@@ -37,7 +37,7 @@ $ python solution_1.py json_files/basic.json name
 Результат в этом случае должен быть таким:
 ```
 $ python solution_1.py json_files/basic.json name
-['Python для сетевых инженеров', 'Advanced Python для сетевых инженеров', 'Сайт курса PyNEng Online', 'Сайт курса Advanced PyNEng Online']
+['Python for network engineers', 'Advanced Python for network engineers', 'PyNEng Online Course Website', 'Advanced PyNEng Online Course Website']
 ```
 
 Отфильтрованные данные выводятся на stdout для удобства, но сам код должен не просто выводить данные,
@@ -50,14 +50,14 @@ $ python solution_1.py json_files/basic.json name
 
 ```
 $ python solution_2a.py json_files/basic.json name
-['Python для сетевых инженеров', 'Advanced Python для сетевых инженеров', 'Сайт курса PyNEng Online', 'Сайт курса Advanced PyNEng Online']
+['Python for network engineers', 'Advanced Python for network engineers', 'PyNEng Online Course Website', 'Advanced PyNEng Online Course Website']
 ```
 
 А вызов с аргументами ``natenka name`` значит, что надо показывать значение ключа name только
 если ключ name находится в значении ключа natenka (не важно в какой вложенности):
 ```
 $ python solution_2a.py json_files/basic.json natenka name
-['Python для сетевых инженеров', 'Advanced Python для сетевых инженеров']
+['Python for network engineers', 'Advanced Python for network engineers']
 ```
 
 Пример вызова для другого файла:

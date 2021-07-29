@@ -117,7 +117,7 @@ $ python solution_3_regex_key.py json_files/cfg.json inter.*
 
 ## Решение
 
-Во всех вариантах решения используется [рекурсия](https://runestone.academy/runestone/books/published/pythonds/Recursion/toctree.html), [перевод](http://aliev.me/runestone/Recursion/Objectives.html).
+Во всех вариантах решения используется [рекурсия](https://runestone.academy/runestone/books/published/pythonds/Recursion/toctree.html) ([перевод](http://aliev.me/runestone/Recursion/Objectives.html)).
 
 * solution_1.py - вариант решения только для первого этапа
 * solution_2a.py - вариант решения для 1 и 2 этапа

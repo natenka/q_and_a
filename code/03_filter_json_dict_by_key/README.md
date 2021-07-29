@@ -92,9 +92,10 @@ $ python solution_1.py json_files/cfg.json user name
   выражения. Результат выводится вместе с ключом, так как не всегда понятно какой именно ключ совпал
 * json_files - каталог с примерами файлов в формате JSON
 
-  * cfg.json
-  * cmd_output.json
-  * repos.json
+ * basic.json
+ * cfg.json
+ * cmd_output.json
+ * repos.json
 
 Полезные ссылки:
 

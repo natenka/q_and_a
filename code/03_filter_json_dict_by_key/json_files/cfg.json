@@ -1,0 +1,195 @@
+{
+  "configuration": {
+    "bridge-domains": [
+      {
+        "interface": [
+          {
+            "name": "ae1.185"
+          }
+        ],
+        "name": "v185",
+        "routing-interface": "irb.185",
+        "vlan-id": 185
+      },
+      {
+        "interface": [
+          {
+            "name": "ae47.128"
+          }
+        ],
+        "name": "v128",
+        "routing-interface": "irb.128",
+        "vlan-id": 128
+      },
+      {
+        "interface": [
+          {
+            "name": "ae1.139"
+          }
+        ],
+        "name": "v139",
+        "vlan-id": 139
+      },
+      {
+        "interface": [
+          {
+            "name": "ae1.140"
+          }
+        ],
+        "name": "v140",
+        "vlan-id": 140
+      }
+    ],
+    "login": {
+      "retry-options": {
+        "backoff-factor": 10,
+        "backoff-threshold": 3,
+        "tries-before-disconnect": 3
+      },
+      "user": [
+        {
+          "class": "read-only",
+          "name": "RO",
+          "uid": 2006
+        },
+        {
+          "class": "super-user",
+          "name": "SU",
+          "uid": 2007
+        },
+        {
+          "authentication": {
+            "encrypted-password": "password"
+          },
+          "class": "super-user",
+          "name": "User1",
+          "uid": 1000
+        },
+        {
+          "authentication": {
+            "encrypted-password": "password"
+          },
+          "class": "super-user",
+          "name": "User2",
+          "uid": 2001
+        },
+        {
+          "authentication": {
+            "encrypted-password": "password"
+          },
+          "class": "super-user",
+          "name": "User3",
+          "uid": 2002
+        }
+      ]
+    },
+    "ports": {
+      "console": {
+        "log-out-on-disconnect": [
+          null
+        ]
+      }
+    },
+    "root-authentication": {
+      "encrypted-password": "password"
+    },
+    "services": {
+      "ftp": {
+        "connection-limit": 2
+      },
+      "netconf": {
+        "ssh": [
+          null
+        ]
+      },
+      "ssh": {
+        "connection-limit": 20,
+        "protocol-version": [
+          "v2"
+        ],
+        "rate-limit": 10
+      },
+      "telnet": [
+        null
+      ]
+    },
+    "ospf-neighbor-information": [
+      {
+        "activity-timer": "38",
+        "interface-name": "ge-0/0/1.1",
+        "neighbor-address": "192.168.1.1",
+        "neighbor-id": "10.0.0.2",
+        "neighbor-priority": "128",
+        "ospf-neighbor-state": "Full"
+      },
+      {
+        "activity-timer": "35",
+        "interface-name": "ge-0/0/1.4",
+        "neighbor-address": "192.168.4.1",
+        "neighbor-id": "10.0.0.4",
+        "neighbor-priority": "128",
+        "ospf-neighbor-state": "Full"
+      }
+    ],
+    "interfaces": {
+      "interface": [
+        {
+          "description": "To CORE gi-1/0/5",
+          "encapsulation": "flexible-ethernet-services",
+          "flexible-vlan-tagging": [
+            null
+          ],
+          "hierarchical-scheduler": [
+            null
+          ],
+          "name": "ge-0/0/0",
+          "unit": [
+            {
+              "description": "L3-management",
+              "family": {
+                "inet": {
+                  "address": [
+                    {
+                      "name": "192.168.1.1/29"
+                    }
+                  ]
+                }
+              },
+              "name": 11,
+              "vlan-id": 11
+            },
+            {
+              "description": "Server",
+              "family": {
+                "inet": {
+                  "address": [
+                    {
+                      "name": "10.1.1.1/29"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "description": "ISP1",
+          "name": "ge-0/0/1",
+          "unit": [
+            {
+              "family": {
+                "inet": {
+                  "address": [
+                    {
+                      "name": "192.168.199.1/30"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

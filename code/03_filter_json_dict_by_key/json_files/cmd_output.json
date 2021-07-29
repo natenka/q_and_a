@@ -1,0 +1,102 @@
+{
+    "chassis-inventory" : [
+    {
+        "attributes" : {
+            "xmlns" : "http://xml.juniper.net/junos/16.1R1/junos-chassis"
+        },
+        "chassis" : [
+        {
+            "attributes" : {"junos:style" : "inventory"},
+            "name" : [
+            {
+                "data" : "Chassis"
+            }
+            ],
+            "serial-number" : [
+            {
+                "data" : "serial-number"
+            }
+            ],
+            "description" : [
+            {
+                "data" : "MX80-48T"
+            }
+            ],
+            "chassis-module" : [
+            {
+                "name" : [
+                {
+                    "data" : "Midplane"
+                }
+                ],
+                "version" : [
+                {
+                    "data" : "REV 11"
+                }
+                ],
+                "part-number" : [
+                {
+                    "data" : "711-031603"
+                }
+                ],
+                "serial-number" : [
+                {
+                    "data" : "serial-number"
+                }
+                ],
+                "description" : [
+                {
+                    "data" : "MX80-48T"
+                }
+                ],
+                "clei-code" : [
+                {
+                    "data" : "CMMAX10BRD"
+                }
+                ],
+                "model-number" : [
+                {
+                    "data" : "CHAS-MX80-48T-S"
+                }
+                ]
+            }
+            ]
+        }
+        ]
+    }
+    ],
+ "system-uptime-information" :
+    {
+        "current-time" :
+        {
+            "date-time" : "2018-05-15 13:49:56 PDT"
+        },
+        "time-source" : " NTP CLOCK ",
+        "system-booted-time" :
+        {
+            "date-time" : "2018-05-15 10:57:02 PDT",
+            "time-length" : "02:52:54"
+        },
+        "protocols-started-time" :
+        {
+            "date-time" : "2018-05-15 10:59:33 PDT",
+            "time-length" : "02:50:23"
+        },
+        "last-configured-time" :
+        {
+            "date-time" : "2018-05-15 13:49:40 PDT",
+            "time-length" : "00:00:16",
+            "user" : "admin"
+        },
+        "uptime-information" :
+        {
+            "date-time" : "1:49PM",
+            "up-time" : "2:53",
+            "active-user-count" : "1",
+            "load-average-1" : "0.00",
+            "load-average-5" : "0.06",
+            "load-average-15" : "0.06"
+        }
+    }
+}
+

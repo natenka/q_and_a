@@ -2,6 +2,7 @@ import re
 from pprint import pprint
 from queue import Queue
 
+import click
 from scrapli import Scrapli
 from scrapli.exceptions import ScrapliException
 
@@ -59,7 +60,17 @@ def explore_topology(start_device, params):
     return topology
 
 
-if __name__ == "__main__":
+@click.command()
+@click.argument("start")
+def cli(start):
+    """
+    Run CDP network explorer. Enter START IP address.
+
+    Example:
+
+    \b
+        python solution_1_ip_only.py 192.168.100.1
+    """
     common_params = {
         "auth_password": "cisco",
         "auth_secondary": "cisco",
@@ -69,6 +80,9 @@ if __name__ == "__main__":
         "timeout_socket": 5,
         "timeout_transport": 10,
     }
-    start = "192.168.100.1"
     topology = explore_topology(start, params=common_params)
     pprint(topology)
+
+
+if __name__ == "__main__":
+    cli()

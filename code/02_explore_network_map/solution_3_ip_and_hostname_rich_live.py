@@ -1,5 +1,6 @@
 from pprint import pprint
 
+import click
 from rich import print
 from rich.tree import Tree
 from rich.live import Live
@@ -36,7 +37,9 @@ def generate_tree_from_schema_ports(schema):
     return Padding(tree, 4)
 
 
-def explore_topology(start_device_ip, params, live):
+def explore_topology(
+    start_device_ip, params, live=None, live_tree_function=generate_tree_from_schema
+):
     visited_hostnames = set()
     visited_ipadresses = set()
     topology = {}
@@ -44,7 +47,8 @@ def explore_topology(start_device_ip, params, live):
     todo.append(start_device_ip)
 
     while len(todo) > 0:
-        live.update(live_tree_function(topology))  # Rich
+        if live:
+            live.update(live_tree_function(topology))  # Rich
         current_ip = todo.pop(0)
         params["host"] = current_ip
 
@@ -71,7 +75,28 @@ def explore_topology(start_device_ip, params, live):
     return topology
 
 
-if __name__ == "__main__":
+@click.command()
+@click.argument("start")
+@click.option(
+    "--live-display",
+    "-l",
+    type=click.Choice(["off", "devices", "ports"]),
+    help="Control live topology display",
+    default="devices",
+    show_default=True
+)
+def cli(start, live_display):
+    """
+    Run CDP network explorer. Enter START IP address.
+
+    Example:
+
+    \b
+        python solution_3_ip_and_hostname_rich_live.py 192.168.100.1
+        python solution_3_ip_and_hostname_rich_live.py 192.168.100.1 -l ports
+        python solution_3_ip_and_hostname_rich_live.py 192.168.100.1 -l off
+
+    """
     common_params = {
         "auth_password": "cisco",
         "auth_secondary": "cisco",
@@ -81,9 +106,19 @@ if __name__ == "__main__":
         "timeout_socket": 5,
         "timeout_transport": 10,
     }
-    start = "192.168.100.1"
-    live_tree_function = generate_tree_from_schema
-    # live_tree_function = generate_tree_from_schema_ports
-    with Live(live_tree_function({}), refresh_per_second=4) as live:  # Rich
-        topology = explore_topology(start, common_params, live)
+    if live_display == "devices":
+        live_tree_function = generate_tree_from_schema
+    elif live_display == "ports":
+        live_tree_function = generate_tree_from_schema_ports
+
+    if live_display == "off":
+        topology = explore_topology(start, common_params)
         print(topology)
+    else:
+        with Live(live_tree_function({}), refresh_per_second=4) as live:  # Rich
+            topology = explore_topology(start, common_params, live, live_tree_function)
+            print(topology)
+
+
+if __name__ == "__main__":
+    cli()

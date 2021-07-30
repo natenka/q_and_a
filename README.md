@@ -9,10 +9,10 @@
 Варианты решения не являются каким-то идеальным варинтом, это просто тот вариант решения,
 который написала я.
 
-| QA | Description                                       | Topics/modules used in solution |
-| ---|-------------------------------------------------- | ------------------------------- |
+| QA | Description                                       | Topics/modules used in solutions |
+|:--:|-------------------------------------------------- | -------------------------------- |
 | 1  | [Split the interface configuration into two parts](https://github.com/natenka/q_and_a/tree/main/code/01_convert_interface_cfg) | regex, format, Jinja2           |
-| 2  | [Network Topology Discovery Using CDP/LLDP](https://github.com/natenka/q_and_a/tree/main/code/02_explore_network_map) | scrapli, regex, queue, Rich     |
+| 2  | [Network Topology Discovery Using CDP/LLDP](https://github.com/natenka/q_and_a/tree/main/code/02_explore_network_map) | scrapli, regex, queue, click, Rich     |
 | 3  | [Filter JSON data by Key](https://github.com/natenka/q_and_a/tree/main/code/03_filter_json_dict_by_key) | recursion, generator, regex, click |
 
 

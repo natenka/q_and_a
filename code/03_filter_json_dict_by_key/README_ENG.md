@@ -56,7 +56,12 @@ specifying only name, shows all values that match the key name:
 
 ```
 $ python solution_2a.py json_files/basic.json name
-['Python for network engineers', 'Advanced Python for network engineers', 'PyNEng Online Course Website', 'Advanced PyNEng Online Course Website']
+[
+    'Python for network engineers',
+    'Advanced Python for network engineers',
+    'PyNEng Online Course Website',
+    'Advanced PyNEng Online Course Website'
+]
 ```
 
 A call with natenka name arguments means that you need to show the value
@@ -69,16 +74,49 @@ $ python solution_2a.py json_files/basic.json natenka name
 
 An example of a call for another file:
 
-```
+```python
 $ python solution_2a.py json_files/cfg.json name
-['ae1.185', 'v185', 'ae47.128', 'v128', 'ae1.139', 'v139', 'ae1.140', 'v140', 'User1', 'User2', 'User3', 'ge-0/0/0', '192.168.1.1/29', 11, '10.1.1.1/29', 'ge-0/0/1', '192.168.199.1/30']
+[
+    'ae1.185',
+    'v185',
+    'ae47.128',
+    'v128',
+    'ae1.139',
+    'v139',
+    'ae1.140',
+    'v140',
+    'User1',
+    'User2',
+    'User3',
+    'ge-0/0/0',
+    '192.168.1.1/29',
+    11,
+    '10.1.1.1/29',
+    'ge-0/0/1',
+    '192.168.199.1/30'
+]
 
 $ python solution_2a.py json_files/cfg.json user
 [
     [
-        {'authentication': {'encrypted-password': 'password'}, 'class': 'super-user', 'name': 'User1', 'uid': 1000},
-        {'authentication': {'encrypted-password': 'password'}, 'class': 'super-user', 'name': 'User2', 'uid': 2001},
-        {'authentication': {'encrypted-password': 'password'}, 'class': 'super-user', 'name': 'User3', 'uid': 2002}
+        {
+            'authentication': {'encrypted-password': 'password'},
+            'class': 'super-user',
+            'name': 'User1',
+            'uid': 1000
+        },
+        {
+            'authentication': {'encrypted-password': 'password'},
+            'class': 'super-user',
+            'name': 'User2',
+            'uid': 2001
+        },
+        {
+            'authentication': {'encrypted-password': 'password'},
+            'class': 'super-user',
+            'name': 'User3',
+            'uid': 2002
+        }
     ]
 ]
 
@@ -88,7 +126,7 @@ $ python solution_2a.py json_files/cfg.json user name
 
 ### The third step is to specify the key as a regular expression
 
-```
+```python
 $ python solution_3_regex_key.py json_files/cfg.json vlan.*
 [{'vlan-id': 185}, {'vlan-id': 128}, {'vlan-id': 139}, {'vlan-id': 140}, {'vlan-id': 11}]
 
@@ -110,11 +148,23 @@ $ python solution_3_regex_key.py json_files/cfg.json inter.*
                     'hierarchical-scheduler': [None],
                     'name': 'ge-0/0/0',
                     'unit': [
-                        {'description': 'L3-management', 'family': {'inet': {'address': [{'name': '192.168.1.1/29'}]}}, 'name': 11, 'vlan-id': 11},
-                        {'description': 'Server', 'family': {'inet': {'address': [{'name': '10.1.1.1/29'}]}}}
+                        {
+                            'description': 'L3-management',
+                            'family': {'inet': {'address': [{'name': '192.168.1.1/29'}]}},
+                            'name': 11,
+                            'vlan-id': 11
+                        },
+                        {
+                            'description': 'Server',
+                            'family': {'inet': {'address': [{'name': '10.1.1.1/29'}]}}
+                        }
                     ]
                 },
-                {'description': 'ISP1', 'name': 'ge-0/0/1', 'unit': [{'family': {'inet': {'address': [{'name': '192.168.199.1/30'}]}}}]}
+                {
+                    'description': 'ISP1',
+                    'name': 'ge-0/0/1',
+                    'unit': [{'family': {'inet': {'address': [{'name': '192.168.199.1/30'}]}}}]
+                }
             ]
         }
     }

@@ -37,7 +37,12 @@ $ python solution_1.py json_files/basic.json name
 Результат в этом случае должен быть таким:
 ```
 $ python solution_1.py json_files/basic.json name
-['Python for network engineers', 'Advanced Python for network engineers', 'PyNEng Online Course Website', 'Advanced PyNEng Online Course Website']
+[
+    'Python for network engineers',
+    'Advanced Python for network engineers',
+    'PyNEng Online Course Website',
+    'Advanced PyNEng Online Course Website'
+]
 ```
 
 Отфильтрованные данные выводятся на stdout для удобства, но сам код должен не просто выводить данные,

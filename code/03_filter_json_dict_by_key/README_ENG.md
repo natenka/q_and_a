@@ -5,7 +5,10 @@ we are talking about selecting data from a dictionary/list, since after reading
 JSON data in Python, it will already be Python list/dict. JSON is mentioned
 because this format is often very nested.
 
-> Perhaps there is a ready-made solution for this task, but the point here is to try to solve it on your own, without ready-made modules.
+At all stages of the task, you need to write the code so that there
+is no dependence on a specific JSON file and a specific data structure.
+
+Perhaps there is a ready-made solution for this task, but the point here is to try to solve it on your own, without ready-made modules.
 
 ### The first step is to select all values that match the specified key
 

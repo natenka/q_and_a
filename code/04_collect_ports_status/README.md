@@ -61,7 +61,7 @@
 
 Дополнительно можно добавить сводку по количеству портов, без перечисления конкретных портов, например:
 
-![solution_1_stats](https://github.com/natenka/q_and_a/blob/main/images/qa_04_1_table_stats_info.png?raw=true)
+![solution_1_stats](https://github.com/natenka/q_and_a/blob/main/images/qa_04_1_table_stats_info_color.png?raw=true)
 
 ### Второй этап - отфильтровать из собраной информации только физические порты
 

@@ -14,6 +14,7 @@
 | 1  | [Split the interface configuration into two parts](https://github.com/natenka/q_and_a/tree/main/code/01_convert_interface_cfg) | regex, format, Jinja2           |
 | 2  | [Network Topology Discovery Using CDP/LLDP](https://github.com/natenka/q_and_a/tree/main/code/02_explore_network_map) | scrapli, regex, queue, click, Rich     |
 | 3  | [Filter JSON data by key](https://github.com/natenka/q_and_a/tree/main/code/03_filter_json_dict_by_key) | recursion, generator, regex, click |
+| 4  | [Collecting Port Status Information]() | scrapli, concurrent.futures, regex, rich |
 
 
 ## [Q&A 1](https://github.com/natenka/q_and_a/tree/main/code/01_convert_interface_cfg)
@@ -94,5 +95,16 @@ $ python solution_2a.py json_files/cfg.json user
 $ python solution_2a.py json_files/cfg.json user name
 ['User1', 'User2', 'User3']
 ```
+
+
+## [Q&A 4](https://github.com/natenka/q_and_a/tree/main/code/04_collect_ports_status)
+
+> [English translation](https://github.com/natenka/q_and_a/blob/main/code/04_collect_ports_status/README_ENG.md)
+
+Задача собрать информацию о статусе портов на оборудовании (up/down/admin down для Cisco IOS).
+На первом этапе собирается информация о всех портах (Loopback/физические/Tunnel/...) и их статусе.
+На втором этапе из собраной информации надо отобрать только физические порты. И на третьем сохранять
+информацию о статусе портов в определенный день в файлы и добавить возможность сравнивать изменения
+в статусе портов (текущий статус с последним записанным).
 
 

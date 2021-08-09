@@ -95,11 +95,11 @@
 
 Так же как и с первым этапом, надо вывести информацию по портам в виде таблицы:
 
-![solution_2]()
+![solution_2](https://github.com/natenka/q_and_a/blob/main/images/qa_04_2_table_all_info.png?raw=true)
 
 И добавить сводку по количеству портов, без перечисления конкретных портов:
 
-![solution_2_stats]()
+![solution_2_stats](https://github.com/natenka/q_and_a/blob/main/images/qa_04_2_table_stats_info.png?raw=true)
 
 ### Третий этап - отслеживание изменений в статусе портов
 
@@ -163,7 +163,7 @@ diff_dict = {
 
 И тот же вывод таблицей
 
-![solution3]()
+![solution3](https://github.com/natenka/q_and_a/blob/main/images/qa_04_3_table.png?raw=true)
 
 ## Решение
 

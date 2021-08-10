@@ -1,4 +1,4 @@
-## [English translation]()
+## [English translation](https://github.com/natenka/q_and_a/blob/main/code/04_collect_ports_status/README_ENG.md)
 
 ## Сбор информации о статусе портов, изменения в статусе
 

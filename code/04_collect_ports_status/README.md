@@ -28,28 +28,28 @@
             "down": [],
             "up": ["Ethernet0/0", "Ethernet0/1", "Ethernet0/2", "Ethernet0/3"],
         },
-        "subinterface": {"administratively down": [], "down": [], "up": []},
         "tunnel": {
             "administratively down": [],
             "down": ["Tunnel0", "Tunnel1", "Tunnel9"],
             "up": [],
         },
-        "vlan": {"administratively down": [], "down": [], "up": []},
     },
     "192.168.100.2": {
-        "loopback": {
-            "administratively down": [],
-            "down": [],
-            "up": ["Loopback0", "Loopback9", "Loopback19", "Loopback77", "Loopback100"],
-        },
         "physical": {
             "administratively down": ["Ethernet0/2", "Ethernet0/3"],
             "down": [],
             "up": ["Ethernet0/0", "Ethernet0/1"],
         },
-        "subinterface": {"administratively down": [], "down": [], "up": []},
-        "tunnel": {"administratively down": [], "down": [], "up": []},
-        "vlan": {"administratively down": [], "down": [], "up": []},
+        "subinterface": {
+            "administratively down": ["Ethernet0/3.100"],
+            "down": [],
+            "up": [],
+        },
+        "loopback": {
+            "administratively down": [],
+            "down": [],
+            "up": ["Loopback0", "Loopback9", "Loopback19", "Loopback77", "Loopback100"],
+        },
     },
 }
 ```
@@ -78,9 +78,11 @@
         "down": ["Ethernet0/3"],
         "up": ["Ethernet0/0", "Ethernet0/1"],
     },
-    "subinterface": {"administratively down": [], "down": [], "up": []},
-    "tunnel": {"administratively down": [], "down": [], "up": []},
-    "vlan": {"administratively down": [], "down": [], "up": []},
+    "subinterface": {
+        "administratively down": ["Ethernet0/3.100"],
+        "down": [],
+        "up": [],
+    },
 }
 ```
 

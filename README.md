@@ -14,7 +14,7 @@
 | 1  | [Split the interface configuration into two parts](https://github.com/natenka/q_and_a/tree/main/code/01_convert_interface_cfg) | regex, format, Jinja2           |
 | 2  | [Network Topology Discovery Using CDP/LLDP](https://github.com/natenka/q_and_a/tree/main/code/02_explore_network_map) | scrapli, regex, queue, click, Rich     |
 | 3  | [Filter JSON data by key](https://github.com/natenka/q_and_a/tree/main/code/03_filter_json_dict_by_key) | recursion, generator, regex, click |
-| 4  | [Collecting Port Status Information]() | scrapli, concurrent.futures, regex, rich |
+| 4  | [Collecting Port Status Information](https://github.com/natenka/q_and_a/tree/main/code/04_collect_ports_status) | scrapli, concurrent.futures, regex, rich |
 
 
 ## [Q&A 1](https://github.com/natenka/q_and_a/tree/main/code/01_convert_interface_cfg)
@@ -107,5 +107,5 @@ $ python solution_2a.py json_files/cfg.json user name
 информацию о статусе портов и добавить возможность сравнивать изменения
 в статусе портов (текущий статус с последним записанным).
 
-![solution_1_stats](https://github.com/natenka/q_and_a/blob/main/images/qa_04_1_table_stats_info_color.png?raw=true)
+![solution_1_stats](https://github.com/natenka/q_and_a/blob/main/images/qa_04_1_table_stats.png?raw=true)
 

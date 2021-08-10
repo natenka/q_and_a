@@ -1,4 +1,4 @@
-## Collecting Port Status Information
+## Collect Port Status Information
 
 The task is to collect information about the status of ports on the devices
 (up/down/admin down for Cisco IOS). At the first step, information is collected

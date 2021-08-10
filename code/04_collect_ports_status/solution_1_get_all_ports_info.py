@@ -12,7 +12,7 @@ from rich.table import Table
 from rich import print as rprint
 from rich.logging import RichHandler
 
-from solution_1_pretty_printing import draw_pretty_tables_for_port_info, draw_table
+from solution_1_pretty_printing import draw_pretty_tables_for_port_info
 
 
 logging.getLogger("scrapli").setLevel(logging.WARNING)

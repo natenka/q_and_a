@@ -59,15 +59,17 @@ def get_device_all_ports_info(output):
         r"|(?P<vlan>Vlan\d+)|(?P<physical>\S+)"
     )
     keys = ("physical", "subinterface", "loopback", "tunnel", "vlan")
-    status = ["administratively down", "down", "up"]
+    status_keys = ["administratively down", "down", "up"]
 
-    devices_stats = {key: {k: [] for k in status} for key in keys}
+    devices_stats = {}
     for m in re.finditer(regex, output):
         admin_status, status, port = m.group("admin_status", "status", "port")
         intf_type_m = re.search(interface_type_regex, port)
         intf_type = intf_type_m.lastgroup
         if admin_status == "administratively down":
             status = admin_status
+        if intf_type not in devices_stats:
+            devices_stats[intf_type] = {k: [] for k in status_keys}
         devices_stats[intf_type][status].append(port)
     return devices_stats
 

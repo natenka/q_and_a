@@ -58,7 +58,6 @@ def get_device_all_ports_info(output):
         r"|(?P<subinterface>\S+\d\.\d+)"
         r"|(?P<vlan>Vlan\d+)|(?P<physical>\S+)"
     )
-    keys = ("physical", "subinterface", "loopback", "tunnel", "vlan")
     status_keys = ["administratively down", "down", "up"]
 
     devices_stats = {}

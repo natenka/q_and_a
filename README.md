@@ -11,10 +11,10 @@
 
 | QA | Description                                       | Topics/modules used in solutions |
 |:--:|-------------------------------------------------- | -------------------------------- |
-| 1  | [Split the interface configuration into two parts](https://github.com/natenka/q_and_a/tree/main/code/01_convert_interface_cfg) | regex, format, Jinja2           |
-| 2  | [Network Topology Discovery Using CDP/LLDP](https://github.com/natenka/q_and_a/tree/main/code/02_explore_network_map) | scrapli, regex, queue, click, Rich     |
+| 1  | [Split the interface configuration into two parts](https://github.com/natenka/q_and_a/tree/main/code/01_convert_interface_cfg) | regex, format, jinja2           |
+| 2  | [Network Topology Discovery Using CDP/LLDP](https://github.com/natenka/q_and_a/tree/main/code/02_explore_network_map) | scrapli, regex, queue, click, rich     |
 | 3  | [Filter JSON data by key](https://github.com/natenka/q_and_a/tree/main/code/03_filter_json_dict_by_key) | recursion, generator, regex, click |
-| 4  | [Collecting Port Status Information](https://github.com/natenka/q_and_a/tree/main/code/04_collect_ports_status) | scrapli, concurrent.futures, regex, rich |
+| 4  | [Collect Port Status Information](https://github.com/natenka/q_and_a/tree/main/code/04_collect_ports_status) | scrapli, concurrent.futures, regex, rich |
 
 
 ## [Q&A 1](https://github.com/natenka/q_and_a/tree/main/code/01_convert_interface_cfg)

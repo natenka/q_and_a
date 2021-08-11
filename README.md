@@ -17,7 +17,7 @@
 | 4  | [Collect Port Status Information](https://github.com/natenka/q_and_a/tree/main/code/04_collect_ports_status) | scrapli, concurrent.futures, regex, rich |
 
 
-## [Q&A 1](https://github.com/natenka/q_and_a/tree/main/code/01_convert_interface_cfg)
+## [Q&A 1 Split the interface configuration into two parts](https://github.com/natenka/q_and_a/tree/main/code/01_convert_interface_cfg)
 
 > [English translation](https://github.com/natenka/q_and_a/blob/main/code/01_convert_interface_cfg/README_ENG.md)
 
@@ -53,7 +53,7 @@ set interfaces irb unit 1001 mac 00:ff:3c:01:01:01
 
 [Подробнее](https://github.com/natenka/q_and_a/tree/main/code/01_convert_interface_cfg)
 
-## [Q&A 2](https://github.com/natenka/q_and_a/tree/main/code/02_explore_network_map)
+## [Q&A 2 Network Topology Discovery Using CDP/LLDP](https://github.com/natenka/q_and_a/tree/main/code/02_explore_network_map)
 
 > [English translation](https://github.com/natenka/q_and_a/blob/main/code/02_explore_network_map/README_ENG.md)
 
@@ -70,7 +70,7 @@ set interfaces irb unit 1001 mac 00:ff:3c:01:01:01
 [Подробнее](https://github.com/natenka/q_and_a/tree/main/code/02_explore_network_map)
 
 
-## [Q&A 3](https://github.com/natenka/q_and_a/tree/main/code/03_filter_json_dict_by_key)
+## [Q&A 3 Filter JSON data by key](https://github.com/natenka/q_and_a/tree/main/code/03_filter_json_dict_by_key)
 
 > [English translation](https://github.com/natenka/q_and_a/blob/main/code/03_filter_json_dict_by_key/README_ENG.md)
 
@@ -97,7 +97,7 @@ $ python solution_2a.py json_files/cfg.json user name
 ```
 
 
-## [Q&A 4](https://github.com/natenka/q_and_a/tree/main/code/04_collect_ports_status)
+## [Q&A 4 Collect Port Status Information](https://github.com/natenka/q_and_a/tree/main/code/04_collect_ports_status)
 
 > [English translation](https://github.com/natenka/q_and_a/blob/main/code/04_collect_ports_status/README_ENG.md)
 
@@ -106,6 +106,8 @@ $ python solution_2a.py json_files/cfg.json user name
 На втором этапе из собраной информации надо отобрать только физические порты. И на третьем сохранять
 информацию о статусе портов и добавить возможность сравнивать изменения
 в статусе портов (текущий статус с последним записанным).
+
+![solution_1](https://github.com/natenka/q_and_a/blob/main/images/qa_04_1_table_all_info.png?raw=true)
 
 ![solution_1_stats](https://github.com/natenka/q_and_a/blob/main/images/qa_04_1_table_stats.png?raw=true)
 

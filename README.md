@@ -1,13 +1,9 @@
 # Q & A
 
-Мне часто задают вопросы как решить ту или иную задачку и я решила
-выкладывать эти вопросы и решения тут, на случай если кому-то это тоже пригодится.
+I am often asked questions about how to solve this or that problem, and I decided to post
+these questions and solutions here, in case it is also useful to someone.
 
-При желании, описание вопроса можно использовать как задачку и решить ее самостоятельно,
-а потом посмотреть вариант решения.
-
-Варианты решения не являются каким-то идеальным варинтом, это просто тот вариант решения,
-который написала я.
+The description of the question can be used as a task and you can first solve it yourself, and then see the solution.
 
 | QA | Description                                       | Topics/modules used in solutions |
 |:--:|-------------------------------------------------- | -------------------------------- |

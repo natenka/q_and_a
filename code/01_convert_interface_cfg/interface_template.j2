@@ -5,7 +5,7 @@ set interfaces ae9 unit {{unit}} vlan-tags inner {{vlan_inner}}
 set interfaces ae9 unit {{unit}} family bridge policer input {{policer_input}}
 set interfaces ae9 unit {{unit}} family bridge policer output {{policer_output}}
 
-{% if mtu %}
+{% if mtu is defined %}
 set interfaces irb unit {{unit}} family inet mtu {mtu}
 {% endif %}
 set interfaces irb unit {{unit}} description "{{description}}"
